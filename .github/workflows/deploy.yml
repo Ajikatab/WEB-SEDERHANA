@@ -21,8 +21,8 @@ jobs:
       - name: Deploy to ECS
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@54.179.80.82 << 'EOF'
-            cd /var/www/WEB-SEDERHANA
-            git pull origin main
+            cd /var/www/html/WEB-SEDERHANA
+            sudo git pull origin main
             # Restart Nginx or any other service if needed
             sudo systemctl restart nginx
           EOF
