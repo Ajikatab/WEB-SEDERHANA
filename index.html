@@ -3,50 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Web Sederhana</title>
+    <title>Peta Dunia Interaktif</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .map-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .world-map {
+            width: 100%;
+            height: auto;
             max-width: 800px;
             margin: 0 auto;
-            background-color: white;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        }
+
+        .info-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
         }
-        h1 {
-            color: #333;
-            text-align: center;
+
+        .info-card:hover {
+            transform: translateY(-5px);
         }
-        p {
-            line-height: 1.6;
-            color: #666;
+
+        .info-card h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
         }
+
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+            padding: 12px 25px;
+            background: #4CAF50;
             color: white;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 25px;
             margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
+
         .button:hover {
-            background-color: #0056b3;
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .info-section {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Selamat Datang di Website Saya</h1>
-        <p>Ini adalah contoh halaman web sederhana yang dibuat dengan HTML dan CSS dasar. Halaman ini mencakup beberapa elemen umum seperti heading, paragraf, dan tombol.</p>
-        <p>Anda dapat mengubah konten dan gaya sesuai kebutuhan Anda.</p>
-        <a href="#" class="button">Klik Saya</a>
+        <header>
+            <h1>Jelajahi Dunia</h1>
+            <p>Temukan keajaiban dunia melalui peta interaktif kami</p>
+        </header>
+
+        <div class="map-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Equirectangular_projection_SW.jpg/1280px-Equirectangular_projection_SW.jpg" 
+                 alt="Peta Dunia" 
+                 class="world-map">
+            
+            <div class="controls">
+                <button class="button">Zoom In</button>
+                <button class="button">Zoom Out</button>
+                <button class="button">Reset</button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="info-card">
+                <h3>Benua</h3>
+                <p>Dunia terdiri dari 7 benua: Asia, Afrika, Amerika Utara, Amerika Selatan, Eropa, Australia, dan Antartika.</p>
+            </div>
+            <div class="info-card">
+                <h3>Samudera</h3>
+                <p>5 samudera utama: Pasifik, Atlantik, Hindia, Arktik, dan Selatan.</p>
+            </div>
+            <div class="info-card">
+                <h3>Fakta Menarik</h3>
+                <p>71% permukaan Bumi ditutupi oleh air, dan hanya 29% adalah daratan.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html> 
